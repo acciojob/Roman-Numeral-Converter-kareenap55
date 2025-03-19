@@ -10,16 +10,15 @@ function convertToRoman(num) {
     };
 
   //your code here
-	let roman = "";
-	symbols.forEach((item) => {
-		const[symbol , value] = item;
-		while(num>value){
-			roman+= symbol;
-			num-= value;
+	let result = "";
+	for(let key in obj){
+		let[symbol , value] = obj[key];
+		while(num >= value){
+			result += symbol;
+			num -= value;
 		}
-	})
-	return roman;
-
+	}
+	return result
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
